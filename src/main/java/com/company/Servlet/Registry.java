@@ -18,6 +18,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static com.company.Service.LangBundle.bundle;
+
 
 @WebServlet (name = "reg", urlPatterns = {"/reg"})
 public class Registry extends HttpServlet {
@@ -34,11 +36,11 @@ public class Registry extends HttpServlet {
             if (!dao.checkName(name,password)) {
                 dao.createUser(name, password);
                 dao.closeSession();
-                request.setAttribute("info", "Регистрация завершена");
+                request.setAttribute("info",  bundle.getString("completed"));
                 request.getRequestDispatcher("info.jsp").forward(request, response);
 
             } else {
-                request.setAttribute("info", "Пользователь с таким именем уже зарегистрирован");
+                request.setAttribute("info",  bundle.getString("already"));
                 request.getRequestDispatcher("info.jsp").forward(request, response);
             }
         } catch (HibernateException e) {

@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import static com.company.Service.LangBundle.bundle;
+
 /**
  * Created by tyuly on 10.02.2017.
  */
@@ -29,7 +31,7 @@ public class ItemAction extends HttpServlet {
             try (PrintWriter out = response.getWriter()) {
                 DAO dao = new DAOImpl();
                 dao.createItem(name, Login.user, description);
-                request.setAttribute("info", "Товар добавлен");
+                request.setAttribute("info",  bundle.getString("iAdd"));
                 request.getRequestDispatcher("info_shop.jsp").forward(request, response);
             }
             catch (HibernateException e) {
@@ -42,7 +44,7 @@ public class ItemAction extends HttpServlet {
             try (PrintWriter out = response.getWriter()) {
                 DAO dao = new DAOImpl();
                 dao.editItem(Items.item, name, description);
-                request.setAttribute("info", "Данные изменены");
+                request.setAttribute("info",  bundle.getString("chData"));
                 request.getRequestDispatcher("info_shop.jsp").forward(request, response);
             }
             catch (HibernateException e) {

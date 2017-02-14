@@ -84,5 +84,17 @@
                 </configuration>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources/</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>message_en.properties</include>
+                    <include>message_ru.properties</include>
+                    <include>hibernate.cfg.xml</include>
+                </includes>
+            </resource>
+
+        </resources>
     </build>
 </project>

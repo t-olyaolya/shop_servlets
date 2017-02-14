@@ -10,6 +10,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<%@page import="com.company.Service.LangBundle"%>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <title></title>
@@ -19,19 +20,19 @@
 <form action="itemaction" method="get">
     <div style="padding: 100px 0 0 250px;">
         <div id="login-box">
-            <h2>Заполните поля</h2>
+            <h2><%=LangBundle.bundle.getString("fill")%></h2>
             <br>
             <br>
-            <div id="login-box-name" style="margin-top:20px;">Название:</div>
+            <div id="login-box-name" style="margin-top:20px;"><%=LangBundle.bundle.getString("name")%></div>
             <div id="login-box-field" style="margin-top:20px;">
                 <input name="name" class="form-login" title="name" value="" size="30" maxlength="50" />
             </div>
-            <div id="login-box-name" style="margin-top:20px;">Описание:</div>
+            <div id="login-box-name" style="margin-top:20px;"><%=LangBundle.bundle.getString("desc")%></div>
             <div id="login-box-field" style="margin-top:20px;">
                 <input name="description" class="form-login" title="description" value="" size="30" maxlength="50" />
             </div>
             <br />
-            <input style="margin-left:100px;" type="submit" value="Сохранить" />
+            <input style="margin-left:100px;" type="submit" value="<%=LangBundle.bundle.getString("save")%>" />
         </div>
     </div>
 </form>

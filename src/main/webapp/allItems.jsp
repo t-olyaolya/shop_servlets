@@ -7,19 +7,20 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page import="com.company.Service.LangBundle"%>
 <html>
 <head>
-    <title>Все товары</title>
+    <title><%=LangBundle.bundle.getString("items")%></title>
 </head>
 <body>
 <a href="account.jsp">${user}</a>
 <table border="1">
     <thead>
-    <h1>Все товары</h1>
+    <h1><%=LangBundle.bundle.getString("items")%></h1>
     <tr>
         <th>Id</th>
-        <th>Товар</th>
-        <th>Описание</th>
+        <th><%=LangBundle.bundle.getString("item")%></th>
+        <th><%=LangBundle.bundle.getString("desc")%></th>
     </tr>
     </thead>
     <tbody>

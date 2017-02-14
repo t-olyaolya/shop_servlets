@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import static com.company.Service.LangBundle.bundle;
+
 /**
  * Created by tyuly on 10.02.2017.
  */
@@ -47,7 +49,7 @@ public class Items extends HttpServlet {
         int itemId = Integer.parseInt(request.getParameter("item.id"));
         Item item = dao.getItem(itemId);
         dao.dltItem(item);
-        request.setAttribute("info", "Товар удален");
+        request.setAttribute("info",  bundle.getString("iDel"));
         request.getRequestDispatcher("info_shop.jsp").forward(request, response);
     }
 }

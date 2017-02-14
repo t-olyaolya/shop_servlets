@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.company.Service.LangBundle" %><%--
   Created by IntelliJ IDEA.
   User: tyuly
   Date: 08.02.2017
@@ -12,18 +12,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Магазин</title>
+    <title><%=LangBundle.bundle.getString("shop")%></title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <a href="account.jsp">${user}</a>
 <table border="1">
     <thead>
-    <h1>Товары, доступные для покупки</h1>
+    <h1><%=LangBundle.bundle.getString("sale")%></h1>
     <tr>
         <th>Id</th>
-        <th>Товар</th>
-        <th>Описание</th>
+        <th><%=LangBundle.bundle.getString("item")%></th>
+        <th><%=LangBundle.bundle.getString("desc")%></th>
         <th></th>
     </tr>
     </thead>
@@ -34,7 +34,7 @@
             <td><c:out value="${item.name}" /></td>
             <td><c:out value="${item.description}" /></td>
             <td><a
-                    href="buy?action=buy&item.id=<c:out value="${item.id }"/>">Купить</a></td>
+                    href="buy?action=buy&item.id=<c:out value="${item.id }"/>"><%=LangBundle.bundle.getString("buy")%></a></td>
             </c:forEach>
         </tr>
     </tbody>

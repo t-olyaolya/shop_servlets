@@ -16,6 +16,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.company.Service.LangBundle.bundle;
+
 /**
  * Created by tyuly on 08.02.2017.
  */
@@ -40,7 +42,7 @@ public class Login extends HttpServlet {
                 request.getRequestDispatcher("shop.jsp").forward(request, response);
 
             } else {
-                request.setAttribute("info", "Неверный пароль");
+                request.setAttribute("info",  bundle.getString("incor"));
                 request.getRequestDispatcher("info.jsp").forward(request, response);
             }
         } catch (HibernateException e) {

@@ -1,4 +1,4 @@
-
+<%@ page import="com.company.Service.LangBundle" %>
 <%--
   Created by IntelliJ IDEA.
   User: tyuly
@@ -13,26 +13,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <title>Редактирование</title>
+    <title><%LangBundle.bundle.getString("edit");%></title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <form action="useraction" method="get">
     <div style="padding: 100px 0 0 250px;">
         <div id="login-box">
-            <h2>Заполните поля</h2>
+            <h2><%=LangBundle.bundle.getString("fill")%></h2>
             <br>
             <br>
-            <div id="login-box-name" style="margin-top:20px;">Имя:</div>
+            <div id="login-box-name" style="margin-top:20px;"><%=LangBundle.bundle.getString("name")%></div>
             <div id="login-box-field" style="margin-top:20px;">
                 <input name="name" class="form-login" title="name" value="" size="30" maxlength="50" />
             </div>
-            <div id="login-box-name" style="margin-top:20px;">Пароль:</div>
+            <div id="login-box-name" style="margin-top:20px;"><%=LangBundle.bundle.getString("password")%></div>
             <div id="login-box-field" style="margin-top:20px;">
                 <input name="description" class="form-login" title="password" value="" size="30" maxlength="50" />
             </div>
             <br />
-            <input style="margin-left:100px;" type="submit" value="Сохранить" />
+            <input style="margin-left:100px;" type="submit" value=<%=LangBundle.bundle.getString("save")%> />
         </div>
     </div>
 </form>

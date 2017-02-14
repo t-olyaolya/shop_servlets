@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import static com.company.Service.LangBundle.bundle;
+
 /**
  * Created by tyuly on 09.02.2017.
  */
@@ -31,7 +33,7 @@ public class Shop extends HttpServlet {
             User user = dao.getUser(Login.user.getName());
             Item item = dao.getItem(itemId);
             dao.createBid(user, item);
-            request.setAttribute("info", "Товар куплен");
+            request.setAttribute("info", bundle.getString("bought"));
             request.getRequestDispatcher("info_shop.jsp").forward(request, response);
         }
     }

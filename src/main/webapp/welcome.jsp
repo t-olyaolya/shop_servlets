@@ -9,19 +9,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Магазин</title>
+    <title>${shop}</title>
 </head>
 <body>
+<a href="lang.jsp">${choose}</a>
 <h1>${info}</h1>
-<a href="registry.jsp">Регистрация</a>
-<a href="login.jsp">Вход</a>
+<a href="registry.jsp">${reg}</a>
+<a href="login.jsp">${log}</a>
 <table border="1">
     <thead>
-    <h1>Товары</h1>
+    <h1>${shop1}</h1>
     <tr>
         <th>Id</th>
-        <th>Товар</th>
-        <th>Описание</th>
+        <th>${item}</th>
+        <th>${desc}</th>
     </tr>
     </thead>
     <tbody>

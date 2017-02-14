@@ -16,6 +16,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.company.Service.LangBundle.bundle;
+
 /**
  * Created by tyuly on 10.02.2017.
  */
@@ -83,7 +85,7 @@ public class Account extends HttpServlet {
         DAO dao = new DAOImpl();
         dao.dltUser(Login.user);
         Login.user = null;
-        request.setAttribute("info", "Пользователь удален");
+        request.setAttribute("info",bundle.getString("dlltUser"));
         request.getRequestDispatcher("info.jsp").forward(request, response);
         dao.closeSession();
 
@@ -92,9 +94,10 @@ public class Account extends HttpServlet {
     public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException,ServletException {
         DAO dao = new DAOImpl();
         Login.user = null;
-        request.setAttribute("info", "Вы вышли");
+        request.setAttribute("info", bundle.getString("out"));
         request.getRequestDispatcher("info.jsp").forward(request, response);
         dao.closeSession();
 
     }
+
 }

@@ -1,3 +1,4 @@
+<%@ page import="com.company.Service.LangBundle" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -9,17 +10,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Мои покупки</title>
+    <title><%=LangBundle.bundle.getString("purchases")%></title>
 </head>
 <body>
 <a href="account.jsp">${user}</a>
 <table border="1">
     <thead>
-    <h1>Мои покупки</h1>
+    <h1><%=LangBundle.bundle.getString("purchases")%></h1>
     <tr>
         <th>Id</th>
-        <th>Товар</th>
-        <th>Описание</th>
+        <th><%=LangBundle.bundle.getString("item")%></th>
+        <th><%=LangBundle.bundle.getString("desc")%></th>
     </tr>
     </thead>
     <tbody>
